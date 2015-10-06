@@ -5,28 +5,22 @@
 package práctica.pkg2;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 
 public class Histogram <T>{
-   private final T[] elvector;
+   private final Map<T,Integer> map = new HashMap<>();
 
-    public Histogram(T[] elVector) {
-        this.elvector = elVector;
+    public Integer get(Object key) {//alt+insrt +delgate
+        return map.get(key);
     }
 
-    public T[] getElvector() {
-        return elvector;
+    public Set<T> keySet() {
+        return map.keySet();
     }
-   
-    public HashMap<T,Integer> getHisto(){
-        HashMap<T,Integer> contador = new HashMap<T,Integer>();
-        for(int i = 0; i < elvector.length;i++){
-            if(contador.containsKey(elvector[i])){
-                contador.put(elvector[i], contador.get(elvector[i])+1);
-            }else{
-                contador.put(elvector[i], 1);
-            }
-        }
-        return contador;
+    public void increment (T key){
+        map.put(key, map.containsKey(key)?map.get(key)+1:1);
     }
+    
 }

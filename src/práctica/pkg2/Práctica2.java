@@ -19,12 +19,10 @@ public class Práctica2 {
         // TODO code application logic here
         int[] array = {1,4,7,1,1,8,1,4,9,9};
         String[] array1 = {"Ana", "Juan", "Pedro", "Ana", "Juan", "Pedro"};
-        Histogram result = new Histogram(array1);
-        HashMap <String, Integer> contador = result.getHisto();
+        Histogram <String> result = CalculaHisto.computeHisto(array1);
         /*fore tab*/
-        for (String key : contador.keySet()) {
-            System.out.println(key + ":" + contador.get(key));
-        }
-        
+        for (String key : result.keySet()) {
+            System.out.println(key + ":" + result.get(key));
+        }        
     }
 }
