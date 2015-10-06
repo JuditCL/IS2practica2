@@ -7,19 +7,19 @@ package práctica.pkg2;
 import java.util.HashMap;
 
 
-public class Histogram {
-   private final int[] elvector;
+public class Histogram <T>{
+   private final T[] elvector;
 
-    public Histogram(int[] elVector) {
+    public Histogram(T[] elVector) {
         this.elvector = elVector;
     }
 
-    public int[] getElvector() {
+    public T[] getElvector() {
         return elvector;
     }
    
-    public HashMap<Integer,Integer> getHisto(){
-        HashMap<Integer,Integer> contador = new HashMap<Integer,Integer>();
+    public HashMap<T,Integer> getHisto(){
+        HashMap<T,Integer> contador = new HashMap<T,Integer>();
         for(int i = 0; i < elvector.length;i++){
             if(contador.containsKey(elvector[i])){
                 contador.put(elvector[i], contador.get(elvector[i])+1);
